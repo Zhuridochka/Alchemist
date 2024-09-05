@@ -1,1 +1,106 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.item-portfolio {
+
+  // .item-portfolio__link
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: toRem(40);
+    background: $bgColor;
+    font-size: toRem(40);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  // .item-portfolio__video
+  &__video {
+    flex: 1 1 toRem(360);
+    aspect-ratio: 1;
+    object-fit: cover;
+    position: relative;
+    transition: all 0.6s;
+
+    &::before {
+      display: none;
+      content: '';
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      z-index: 1;
+      inline-size: 100%;
+      block-size: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        outline: 10px solid #9700FF;
+
+        &::before {
+          display: block;
+        }
+
+        .item-portfolio__play-button {
+          transform: translate(-50%, -90%);
+        }
+
+        .item-portfolio__text {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(-50%, 50%);
+        }
+      }
+    }
+  }
+
+  // .item-portfolio__image
+  &__image {
+    inline-size: 100%;
+    aspect-ratio: 1;
+  }
+
+  // .item-portfolio__play-button
+  &__play-button {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+    inline-size: toRem(120);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: all 0.6s;
+
+    &:not(:last-child) {
+      margin-block-end: toRem(10);
+    }
+
+    &::before {
+      font-size: toRem(100);
+      color: $mainColor;
+    }
+  }
+
+  // .item-portfolio__text
+  &__text {
+    // display: none;
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    inline-size: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    transition: all 0.6s;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  // .item-portfolio__title
+  &__title {}
+}
