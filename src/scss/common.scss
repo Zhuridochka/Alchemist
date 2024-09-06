@@ -215,3 +215,38 @@
     background-position: toRem(406) 50%;
   }
 }
+
+//================================================================
+.social {
+
+  // .social__list
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(19);
+  }
+
+  // .social__item
+  &__item {}
+
+  // .social__link
+  &__link {
+    inline-size: toRem(20);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+
+    &::before {
+      font-size: toRem(15);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ffffffc5;
+        transform: scale(1.3);
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.header {
+
+  // .header__container
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block-start: toRem(60);
+    padding-block-end: toRem(30);
+
+    @media (max-width: toEm(1180)) {
+      padding-block-start: toRem(40);
+    }
+
+    @include adaptiveValue("column-gap", 100, 60);
+  }
+
+  // .header__logo
+  &__logo {
+    font-family: "Exo 2", sans-serif;
+    line-height: 0.666667;
+    /* 20/30 */
+    margin-block-start: toRem(-5);
+    white-space: nowrap;
+
+    position: relative;
+    z-index: 5;
+    @include adaptiveValue("font-size", 30, 16);
+    @include adaptiveValue("letter-spacing", -3, -1.6);
+  }
+
+  // .header__menu
+  &__menu {}
+
+  // .header__social
+  &__social {
+    @media (max-width:$mobile) {
+      display: none;
+    }
+  }
+
+  // .header__icon  
+  &__icon {}
+
+
+}
