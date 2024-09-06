@@ -5,20 +5,35 @@
 })
 
 <body>
-  <div class="wrapper">
-    @@include('html/_header.htm',{})
-    <main class="page">
-      <a class="item-portfolio__link" href="#">
-        <div class="item-portfolio__video">
-          <img class="item-portfolio__image" src="@img/portfolio/image_01.jpeg" alt="Image 01">
-          <button class="item-portfolio__play-button _icon-play"></button>
-          <div class="item-portfolio__text">play video</div>
-        </div>
-        <h3 class="item-portfolio__title">CAsh cow</h3>
-      </a>
-    </main>
-    @@include('html/_footer.htm',{})
-  </div>
+  <article class="item-portfolio">
+    <a class="item-portfolio__link" href="#">
+      <div class="item-portfolio__video">
+        <img class="item-portfolio__image" src="@img/portfolio/image_01.jpeg" alt="Image 01">
+        <button class="item-portfolio__play-button _icon-play"></button>
+        <div class="item-portfolio__text">play video</div>
+      </div>
+      <h3 class="item-portfolio__title">CAsh cow</h3>
+    </a>
+  </article>
+
+  <article class="review">
+    <div class="review__body">
+      <div class="review__user">Marcus</div>
+      <div class="review__position">Co founder</div>
+      <div class="review__info">
+        <p>
+          Perfect communication and exceptional skills. This guy is King.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <button class="button">
+    <span>lets talk</span>
+  </button>
+
+  <div class="arrow"></div>
+
   @@include('html/_js.htm',{})
 </body>
 

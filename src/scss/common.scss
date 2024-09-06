@@ -1,9 +1,12 @@
 // Заголовки, загальні БЕМ блоки та інше...
+//================================================================
 .item-portfolio {
 
   // .item-portfolio__link
   &__link {
     position: relative;
+    flex: 1 1 toRem(360);
+    aspect-ratio: 360 / 440;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,4 +106,112 @@
 
   // .item-portfolio__title
   &__title {}
+}
+
+//================================================================
+.review {
+  padding-block: toRem(70);
+  padding-inline: toRem(39.5);
+  background-color: $purpleColor;
+  box-shadow: 0 toRem(4) toRem(10) 0 rgba(0, 0, 0, 0.20);
+
+  // .review__body
+  &__body {
+    text-align: center;
+  }
+
+  // .review__user
+  &__user {
+    font-size: toRem(40);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-block-end: toRem(10);
+    }
+  }
+
+  // .review__position
+  &__position {
+    font-size: toRem(20);
+    line-height: 1.75;
+    /* 35/20 */
+    text-transform: capitalize;
+
+    &:not(:last-child) {
+      margin-block-end: toRem(10);
+    }
+  }
+
+  // .review__info
+  &__info {
+
+    p {
+      font-size: toRem(20);
+      line-height: 1.75;
+      /* 35/20 */
+      letter-spacing: toRem(-0.4s);
+      text-transform: capitalize;
+    }
+  }
+}
+
+//================================================================
+.button {
+  background-color: $purpleColor;
+  box-shadow: 0 toRem(4) toRem(10) 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: toRem(15) toRem(60);
+  transition: color 0.4s;
+
+  span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: toRem(20);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $darkBlue;
+    }
+  }
+
+  &--small {
+    padding: toRem(10) toRem(40);
+
+    span {
+      font-size: toRem(18);
+      line-height: 1.111111;
+      /* 20/18 */
+    }
+  }
+}
+
+//================================================================
+.arrow {
+  display: flex;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  inline-size: toRem(203);
+  block-size: toRem(39);
+  background: url('../img/about/bg_image.png') toRem(257);
+  mask-image: url('../img/arrow.svg');
+  animation: animationArrow 3s linear infinite;
+}
+
+@keyframes animationArrow {
+  0% {
+    background-position: toRem(-203) 50%;
+  }
+
+  50% {
+    background-position: toRem(203) 50%;
+  }
+
+  100% {
+    background-position: toRem(406) 50%;
+  }
 }
