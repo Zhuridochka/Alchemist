@@ -160,7 +160,7 @@
 .button {
   background-color: $purpleColor;
   box-shadow: 0 toRem(4) toRem(10) 0 rgba(0, 0, 0, 0.25);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: toRem(15) toRem(60);
@@ -248,5 +248,21 @@
         transform: scale(1.3);
       }
     }
+  }
+}
+
+//================================================================
+.title {
+  font-size: toRem(60);
+  font-weight: 700;
+  line-height: 1.166667;
+  /* 70/60 */
+  text-transform: uppercase;
+
+  // .title--big
+  &--big {
+    line-height: 0.875;
+    /* 70/80 */
+    @include adaptiveValue("font-size", 80, 32);
   }
 }
