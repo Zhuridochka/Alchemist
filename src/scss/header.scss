@@ -13,6 +13,10 @@
     }
 
     @include adaptiveValue("column-gap", 100, 60);
+
+    @media (max-width: toEm(393)) {
+      padding-inline: toRem(20);
+    }
   }
 
   // .header__logo

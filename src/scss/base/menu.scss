@@ -15,6 +15,7 @@
 			padding: toRem(100) toRem(15) toRem(15) toRem(30);
 			background-color: $purpleColor;
 			transition: right 0.5s;
+			z-index: 3;
 
 			&::before {
 				content: "";

@@ -163,14 +163,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: toRem(15) toRem(60);
+  // padding: toRem(15) toRem(60);
   transition: color 0.4s;
+  @include adaptiveValue("padding-block", 15, 8, 0, 1512, 393);
+  @include adaptiveValue("padding-inline", 60, 40, 0, 1512, 393);
 
   span {
     font-family: 'Orbitron', sans-serif;
     font-size: toRem(20);
     font-weight: 900;
     text-transform: uppercase;
+    @include adaptiveValue("font-size", 20, 14, 0, 1512, 393);
   }
 
   @media (any-hover: hover) {
@@ -188,6 +191,16 @@
       /* 20/18 */
     }
   }
+
+  @media (max-width: toEm(393)) {
+    padding: toRem(8) toRem(40);
+
+    // span {
+    //   font-size: toRem(14);
+    //   line-height: 142.857143%;
+    //   /* 20/14 */
+    // }
+  }
 }
 
 //================================================================
@@ -199,7 +212,7 @@
   block-size: toRem(39);
   background: url('../img/about/bg_image.png') toRem(257);
   mask-image: url('../img/arrow.svg');
-  animation: animationArrow 3s linear infinite;
+  animation: animationArrow 3s linear 0.2s infinite;
 }
 
 @keyframes animationArrow {
@@ -253,11 +266,11 @@
 
 //================================================================
 .title {
-  font-size: toRem(60);
   font-weight: 700;
   line-height: 1.166667;
   /* 70/60 */
   text-transform: uppercase;
+  @include adaptiveValue("font-size", 60, 24);
 
   // .title--big
   &--big {
