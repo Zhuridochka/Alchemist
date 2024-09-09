@@ -113,10 +113,19 @@
 
 //================================================================
 .review {
-  padding-block: toRem(70);
+  // padding-block: toRem(70);
   padding-inline: toRem(39.5);
   background-color: $purpleColor;
   box-shadow: 0 toRem(4) toRem(10) 0 rgba(0, 0, 0, 0.20);
+  @include adaptiveValue("padding-block", 70, 35, 0, 1512, 393);
+
+  @media (max-width:$mobile) {
+    padding-inline: toRem(36);
+  }
+
+  @media (max-width:$mobileSmall) {
+    padding-inline: toRem(29);
+  }
 
   // .review__body
   &__body {
@@ -132,6 +141,8 @@
     &:not(:last-child) {
       margin-block-end: toRem(10);
     }
+
+    @include adaptiveValue("font-size", 40, 20, 0, 1512, 393);
   }
 
   // .review__position
@@ -144,6 +155,12 @@
     &:not(:last-child) {
       margin-block-end: toRem(10);
     }
+
+    @media (max-width:$mobileSmall) {
+      font-size: toRem(20);
+      line-height: 111.111111%;
+      /* 20/18 */
+    }
   }
 
   // .review__info
@@ -153,8 +170,15 @@
       font-size: toRem(20);
       line-height: 1.75;
       /* 35/20 */
-      letter-spacing: toRem(-0.4s);
+      letter-spacing: toRem(-0.4);
       text-transform: capitalize;
+
+      @media (max-width:$mobileSmall) {
+        font-size: toRem(14);
+        line-height: 214.285714%;
+        /* 30/14 */
+        letter-spacing: toRem(-0.28);
+      }
     }
   }
 }

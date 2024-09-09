@@ -21,6 +21,13 @@
       @include adaptiveValue("margin-block-end", 200, 80, 0, 1512, 393);
     }
   }
+
+  // .page__testimonials  
+  &__testimonials {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-block-end", 100, 0, 0, 1512, 393);
+    }
+  }
 }
 
 //====================================================================================================
@@ -383,29 +390,6 @@
 
   // .about__rolling
   &__rolling {}
-
-
-  // // .about__bg  
-  // &__bg {
-  //   position: absolute;
-  //   inline-size: 100%;
-  //   inset-block-start: 0;
-  //   inset-inline-start: 0;
-  //   z-index: -1;
-
-  //   &::before {
-  //     content: '';
-  //     background-color: #000;
-  //     inline-size: 100%;
-  //     block-size: 100%;
-  //   }
-  // }
-
-  // // .about__image  
-  // &__image {
-  //   inline-size: 100%;
-  // }
-
 }
 
 .rolling {
@@ -464,7 +448,6 @@
 }
 
 //====================================================================================================
-
 .portfolio {
 
   // .portfolio__container
@@ -514,5 +497,53 @@
   // .portfolio__wrapper
   &__wrapper {
     column-gap: toRem(10);
+  }
+}
+
+//====================================================================================================
+
+.testimonials {
+
+  // .testimonials__container
+  &__container {
+    padding-block-end: toRem(100);
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("row-gap", 120, 20, 0, 1512, 393);
+  }
+
+  // .testimonials__title
+  &__title {
+    text-align: center;
+    align-self: center;
+    padding-inline: toRem(70);
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+      content: '';
+      align-self: center;
+      inline-size: 120%;
+      block-size: toRem(1);
+      background: linear-gradient(90deg, #F00 0%, #42FF00 48.9%, #2400FF 100%);
+      margin-block-start: toRem(10);
+    }
+  }
+
+  // .testimonials__items
+  &__items {
+    margin-inline: 8.398744%;
+    /* 107/1274 */
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: toRem(30);
+    row-gap: toRem(24);
+  }
+
+  // .testimonials__item
+  &__item {
+    flex-basis: toRem(250);
+    flex-shrink: 0;
+    flex-grow: 1;
   }
 }
