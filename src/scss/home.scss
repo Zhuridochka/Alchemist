@@ -14,6 +14,13 @@
       @include adaptiveValue("margin-block-end", 200, 80, 0, 1512, 393);
     }
   }
+
+  // .page__portfolio  
+  &__portfolio {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-block-end", 200, 80, 0, 1512, 393);
+    }
+  }
 }
 
 //====================================================================================================
@@ -303,6 +310,7 @@
 
 //====================================================================================================
 .about {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.99) 85.54%), url('../img/about/bg_image.png') 0 0 / cover no-repeat;
 
   // .about__container
   &__container {
@@ -375,13 +383,35 @@
 
   // .about__rolling
   &__rolling {}
+
+
+  // // .about__bg  
+  // &__bg {
+  //   position: absolute;
+  //   inline-size: 100%;
+  //   inset-block-start: 0;
+  //   inset-inline-start: 0;
+  //   z-index: -1;
+
+  //   &::before {
+  //     content: '';
+  //     background-color: #000;
+  //     inline-size: 100%;
+  //     block-size: 100%;
+  //   }
+  // }
+
+  // // .about__image  
+  // &__image {
+  //   inline-size: 100%;
+  // }
+
 }
 
 .rolling {
 
   // .rolling__body
   &__body {}
-
 
   // .rolling__list  
   &__list {
@@ -430,5 +460,59 @@
       //     rgba(255, 0, 0, 0.60) 67.4%,
       //     rgba(0, 56, 255, 0.60) 100%);
     }
+  }
+}
+
+//====================================================================================================
+
+.portfolio {
+
+  // .portfolio__container
+  &__container {}
+
+  // .portfolio__title
+  &__title {
+    padding-inline-end: toRem(144);
+    display: inline-flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    &::after {
+      content: '';
+      inline-size: 120%;
+      block-size: toRem(1);
+      background: linear-gradient(90deg, #F00 0%, #42FF00 48.9%, #2400FF 100%);
+      margin-block-start: toRem(20);
+
+      @media (max-width: toEm(479.98)) {
+        margin-block-start: toRem(6);
+      }
+
+      @media (max-width: toEm(393)) {
+        margin-block-start: toRem(4);
+      }
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-block-end", 60, 20, 0, 1512, 393);
+    }
+  }
+
+  // .portfolio__slider
+  &__slider {
+    padding: toRem(10);
+  }
+
+  // .portfolio__next-arrow
+  &__next-arrow {
+    align-self: flex-end;
+    margin-block-end: toRem(20);
+
+    @media (max-width:$mobile) {}
+  }
+
+  // .portfolio__wrapper
+  &__wrapper {
+    column-gap: toRem(10);
   }
 }
