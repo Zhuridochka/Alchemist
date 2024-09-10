@@ -190,7 +190,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  // padding: toRem(15) toRem(60);
   transition: color 0.4s;
   @include adaptiveValue("padding-block", 15, 8, 0, 1512, 393);
   @include adaptiveValue("padding-inline", 60, 40, 0, 1512, 393);
@@ -221,12 +220,6 @@
 
   @media (max-width: toEm(393)) {
     padding: toRem(8) toRem(40);
-
-    // span {
-    //   font-size: toRem(14);
-    //   line-height: 142.857143%;
-    //   /* 20/14 */
-    // }
   }
 }
 

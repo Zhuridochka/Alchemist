@@ -8,22 +8,32 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 }
+
 .input {
 	border-radius: 0 !important;
+	max-inline-size: toRem(180);
+	block-size: toRem(50);
 	width: 100%;
 	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
+	padding: toRem(10);
+	// border: 1px solid #eee;
 	caret-color: inherit;
-	&._form-focus {
-	}
-	&._form-error {
-	}
+
+	&._form-focus {}
+
+	&._form-error {}
 }
+
 .input[placeholder]:not([data-placeholder-nohiden]) {
 	&::placeholder {
 		transition: opacity 0.3s;
+		font-family: 'Exo', sans-serif;
+		line-height: 138.888889%;
+		/* 25/18 */
+		letter-spacing: toRem(-0.36);
+		text-transform: capitalize;
 	}
+
 	&:focus::placeholder {
 		opacity: 0;
 	}
