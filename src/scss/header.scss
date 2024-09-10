@@ -1,4 +1,19 @@
 .header {
+  position: relative;
+  background: $bgColor;
+  inline-size: 100%;
+  z-index: 50;
+
+  &._header-scroll {
+    position: fixed;
+    top: -200%;
+    background-color: hsla(0, 0%, 0%, 0.85);
+  }
+
+  &._header-show {
+    transition: top 0.3s ease 0s;
+    top: 0;
+  }
 
   // .header__container
   &__container {

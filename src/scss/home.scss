@@ -5,6 +5,7 @@
   &__hero {
     &:not(:last-child) {
       @include adaptiveValue("margin-block-end", 90, 20, 0, 1512, 393);
+
     }
   }
 
@@ -31,6 +32,101 @@
 
 //====================================================================================================
 .hero {
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    border-radius: toRem(480);
+    opacity: 0.3;
+    background: linear-gradient(90deg, rgba(151, 0, 255, 0.60) 0%, rgba(87, 255, 28, 0.60) 36.9%, rgba(255, 0, 0, 0.60) 67.4%, rgba(0, 56, 255, 0.60) 100%);
+    filter: blur(50px);
+    position: absolute;
+    inline-size: toRem(480);
+    block-size: toRem(480);
+    z-index: -1;
+
+    @media (max-width:$mobile) {
+      display: none;
+    }
+  }
+
+  &::before {
+    inset-block-start: -18.719212%;
+    /* 114/609 */
+    inset-inline-start: -9.920635%;
+    /* 150/1512 */
+    animation: moveBefore 10s linear 1s infinite;
+  }
+
+  &::after {
+    inset-block-end: -18.719212%;
+    /* 114/609 */
+    inset-inline-end: -9.920635%;
+    /* 150/1512 */
+    animation: moveAfter 10s linear 1s infinite;
+  }
+
+  // Анімація для ::before - рух по периметру
+  @keyframes moveBefore {
+    0% {
+      top: 0%;
+      left: 0%;
+    }
+
+    25% {
+      top: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    50% {
+      top: 100%;
+      left: 100%;
+    }
+
+    75% {
+      top: 100%;
+      left: 0%;
+    }
+
+    100% {
+      top: -18%;
+      left: -9%;
+    }
+
+  }
+
+  // Анімація для ::after - рух по діагоналі, потім по периметру
+  @keyframes moveAfter {
+    0% {
+      bottom: 0%;
+      right: 0%;
+    }
+
+    25% {
+      bottom: 50%;
+      right: 50%;
+      transform: translate(50%, 50%);
+    }
+
+    50% {
+      bottom: 100%;
+      right: 100%;
+
+    }
+
+    75% {
+      bottom: 100%;
+      right: 0%;
+    }
+
+    100% {
+      bottom: -18%;
+      right: -9%;
+    }
+  }
 
   // .hero__container
   &__container {
@@ -187,6 +283,8 @@
       }
     }
   }
+
+
 }
 
 .pictures-hero {
@@ -660,16 +758,21 @@
   &__social {
     display: none;
 
-    @media (max-width: toEm(540)) {
+    @media (max-width:$mobile) {
       display: flex;
     }
+
+    // @media (max-width: toEm(540)) {
+    //   display: flex;
+    // }
   }
 
   // .consult__navigation
   &__navigation {
     position: fixed;
     inset-block-end: toRem(110);
-    inset-inline-end: toRem(90);
+    inset-inline-end: 0.059524rem;
+    /* 90/1512 */
     display: flex;
     align-items: center;
     flex-direction: column;
