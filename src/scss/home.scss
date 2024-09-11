@@ -551,6 +551,8 @@
 
 //====================================================================================================
 .portfolio {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.99) 85.54%), url('../img/portfolio/bg_vector.png') top / 100% no-repeat;
+  overflow: hidden;
 
   // .portfolio__container
   &__container {}
