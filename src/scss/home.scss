@@ -304,14 +304,11 @@
   &__image-pr {
     display: inline-block;
     position: absolute;
-    inset-block-start: 10.433071%;
-    /* 53/508 */
-    inset-inline-start: 7.704403%;
-    /* 49/636 */
+    inset-block-start: percent(53, 508);
+    inset-inline-start: percent(49, 636);
     aspect-ratio: 110 / 136;
-    inline-size: 15.988372%;
-    /* 110/688 */
-    transform: rotate(-45deg);
+    inline-size: percent(110, 688);
+    transform: rotate(45deg);
 
     @media (max-width:$mobile) {
       transform: rotate(-15deg);
@@ -323,20 +320,26 @@
       inline-size: 27%;
       inset-inline-start: 12%;
     }
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 110 / 136;
+      object-fit: cover;
+      transform: rotate(-45deg);
+    }
   }
 
   // .pictures-hero__image-ae
   &__image-ae {
     display: inline-block;
     position: absolute;
-    inset-block-start: 17.322835%;
+    inset-block-start: percent(88, 508);
     /* 88/508 */
     inset-inline-end: 3.930818%;
     /* 25/636 */
     aspect-ratio: 70 / 88;
     inline-size: 10.174419%;
     /* 70/688 */
-    transform: rotate(30deg);
 
     @media (max-width:$mobile) {
       transform: rotate(18deg);
@@ -348,6 +351,13 @@
       inline-size: 17%;
       inset-inline-end: 30%;
     }
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 70 / 88;
+      object-fit: cover;
+      transform: rotate(30deg);
+    }
   }
 
   // .pictures-hero__image-men
@@ -355,10 +365,14 @@
     display: inline-block;
     position: absolute;
     inset-block-end: 0;
-    inset-inline-start: 26.100629%;
-    /* 166/636 */
+    inset-inline-start: percent(166, 636);
     aspect-ratio: 376 / 508;
     inline-size: 58.8%;
+
+    img {
+      inline-size: 100%;
+      object-fit: cover;
+    }
 
     @media (max-width: toEm(1150)) {
       width: 65%;
@@ -373,7 +387,6 @@
     inset-inline-start: 0;
     aspect-ratio: 315 / 353;
     inline-size: 49.3%;
-    transform: rotate(90deg);
     z-index: -1;
 
     @media (max-width:$mobile) {
@@ -388,6 +401,13 @@
       inset-inline-start: 0;
       inset-block-end: toRem(12);
     }
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 315 / 353;
+      object-fit: cover;
+      transform: rotate(90deg);
+    }
   }
 
   // .pictures-hero__image-branch
@@ -399,11 +419,17 @@
     /* 53/636 */
     aspect-ratio: 286 / 321;
     width: 44.7%;
-    transform: rotate(90deg);
     z-index: -1;
 
     @media (max-width:$mobile) {
       display: none;
+    }
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 286 / 321;
+      object-fit: cover;
+      transform: rotate(90deg);
     }
   }
 
