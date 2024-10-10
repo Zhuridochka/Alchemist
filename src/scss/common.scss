@@ -3,15 +3,16 @@
 .item-portfolio {
 
   // .item-portfolio__link
-  &__link {}
+  &__link {
+    display: flex;
+    flex-direction: column;
+  }
 
   // .item-portfolio__video
   &__video {
-    aspect-ratio: 360 / 360;
-    inline-size: 100%;
-    object-fit: cover;
     position: relative;
     transition: all 0.6s;
+    display: flex;
 
     &:not(:last-child) {
       margin-block-end: toRem(40);
@@ -52,9 +53,18 @@
 
   // .item-portfolio__image
   &__image {
-    inline-size: 100%;
-    aspect-ratio: 360 / 360;
-    object-fit: cover;
+    inline-size: toRem(360);
+    flex-basis: toRem(360);
+    flex-shrink: 1;
+    flex-grow: 1;
+    aspect-ratio: 1;
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 1;
+      block-size: 100%;
+      object-fit: cover;
+    }
   }
 
   // .item-portfolio__play-button

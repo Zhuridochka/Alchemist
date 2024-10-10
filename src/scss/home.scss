@@ -614,7 +614,7 @@
 
   // .portfolio__slider
   &__slider {
-    padding: toRem(10);
+    // padding: toRem(10);
   }
 
   // .portfolio__next-arrow
@@ -627,8 +627,11 @@
 
   // .portfolio__wrapper
   &__wrapper {
-    column-gap: toRem(10);
+    // column-gap: toRem(10);
   }
+
+  // .portfolio__slide  
+  &__slide {}
 }
 
 //====================================================================================================

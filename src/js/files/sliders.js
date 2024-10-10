@@ -86,13 +86,13 @@ function initSliders() {
         480: {
           slidesPerView: 2,
           spaceBetween: 15,
-          //autoHeight: true,
+          autoHeight: true,
         },
         // коли ширина вікна >= 640px
         640: {
           slidesPerView: 2.2,
           spaceBetween: 15,
-          //autoHeight: true,
+          autoHeight: true,
         },
         // коли ширина вікна >= 768px
         768: {
